@@ -382,7 +382,7 @@ namespace Windows.UI.Xaml.Controls.Primitives
 
 		/// <summary>
 		/// Handles the KeyDown event for ButtonBase.
-		/// Note: ENTER previously did not use ClickMode & was processed on first
+		/// Note: ENTER previously did not use ClickMode and was processed on first
 		/// keydown. However keydown events are sent synchronously, so if the button was
 		/// clicked using the ENTER key, the click handler could not execute code that
 		/// caused reentrancy, like displaying a dialog. Such handlers are common. To
@@ -392,8 +392,6 @@ namespace Windows.UI.Xaml.Controls.Primitives
 		/// causes reentrancy. If the ClickMode is changed by the app to ClickMode.Press,
 		/// the click handler will not be able to execute code that causes reentrancy.
 		/// </summary>
-		/// <param name="key">Key.</param>
-		/// <returns>Handled?</returns>
 		private protected virtual bool OnKeyDownInternal(VirtualKey key)
 		{
 			KeyProcess.KeyDown(key, out var handled, _keyboardNavigationAcceptsReturn, this);

@@ -353,7 +353,7 @@ namespace Windows.UI.Xaml.Controls.Primitives
 			}
 		}
 
-		private void TimerCallback(object sender, object state)
+		private void TimerCallback(object? sender, object state)
 		{
 			var interval = TimeSpan.FromMilliseconds(Interval);
 

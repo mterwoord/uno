@@ -23,9 +23,9 @@ namespace Uno.Foundation.Collections
 		public NullableKeyDictionary(IEqualityComparer<TKey> comparer) =>
 			_dictionary = new Dictionary<TKey, TValue>(comparer);
 
-		public bool ContainsKey(TKey key) => key == null ? _containsNullValue : _dictionary.ContainsKey(key);
+		public bool ContainsKey(TKey? key) => key == null ? _containsNullValue : _dictionary.ContainsKey(key);
 
-		public void Add(TKey key, TValue value)
+		public void Add(TKey? key, TValue value)
 		{
 			if (key == null)
 			{
@@ -38,7 +38,7 @@ namespace Uno.Foundation.Collections
 			}
 		}
 
-		public bool Remove(TKey key)
+		public bool Remove(TKey? key)
 		{
 			if (key != null)
 			{
@@ -55,7 +55,7 @@ namespace Uno.Foundation.Collections
 			return false;
 		}
 
-		public bool TryGetValue(TKey key, out TValue value)
+		public bool TryGetValue(TKey? key, out TValue value)
 		{
 			if (key != null)
 			{
@@ -74,15 +74,13 @@ namespace Uno.Foundation.Collections
 			}
 		}
 
-		public TValue this[TKey key]
+		public TValue this[TKey? key]
 		{
 			get
 			{
 				if (key != null)
 				{
-					TValue ret;
-
-					_dictionary.TryGetValue(key, out ret);
+					_dictionary.TryGetValue(key, out var ret);
 
 					return ret!;
 				}

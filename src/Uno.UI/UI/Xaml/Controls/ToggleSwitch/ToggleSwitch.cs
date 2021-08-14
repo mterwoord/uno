@@ -2,6 +2,10 @@ using System;
 using Uno.UI;
 using Windows.UI.Xaml.Controls.Primitives;
 
+#if __IOS__
+using UIKit;
+#endif
+
 namespace Windows.UI.Xaml.Controls
 {
 	/// <summary>

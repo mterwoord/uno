@@ -256,7 +256,7 @@ namespace Windows.UI.Xaml.Controls
 			bool bIsChecked = false;
 
 			bool groupNameExists = false;
-			string groupName;
+			string? groupName;
 			GetGroupName(out groupNameExists, out groupName);
 
 			var groupsByName = DXamlCore.Current.GetRadioButtonGroupsByName(false);
@@ -305,7 +305,7 @@ namespace Windows.UI.Xaml.Controls
 			}
 		}
 
-		private void GetGroupName(out bool groupNameExists, out string groupName)
+		private void GetGroupName(out bool groupNameExists, out string? groupName)
 		{
 			groupNameExists = false;
 			groupName = null;
